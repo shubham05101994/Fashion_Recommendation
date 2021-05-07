@@ -6,7 +6,7 @@ var path = require("path");
 var app = express();
 var elasticsearch = require('elasticsearch');
 var port = process.env.PORT || 5000;
-//app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, "client", "build")));
 app.use(express.json());
 app.use(cors());
 app.use(
@@ -48,6 +48,8 @@ var Users = require("./routes/Users");
 
 var featureData = require("./routes/featureData");
 app.use("/users", Users);
+
+
 
 app.use("/featureData",featureData);
 app.listen(port, function() {

@@ -326,5 +326,11 @@ let check ={
   });
 });
 
+featureDataroute.get("/ping", (req, res) => {
+  res.send("Hello");
+});
+
 
 module.exports = featureDataroute;
+
+
